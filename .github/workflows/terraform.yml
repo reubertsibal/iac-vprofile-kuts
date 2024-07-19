@@ -2,8 +2,7 @@ name: "Vprofile IAC"
 on:
   push:
     branches: 
-      - main
-      - stage
+      - '**'
     paths:
       - terraform/**
   pull_request:
@@ -24,7 +23,7 @@ jobs:
     terraform:
       name: "Apply terraform code changes"
       runs-on: ubuntu-latest
-      defautls: 
+      defaults: 
         run:
           shell: bash 
           working-directory: ./terraform
